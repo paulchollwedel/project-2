@@ -32,6 +32,14 @@ CREATE TABLE customers (
     PRIMARY KEY (id)
 );
 
+CREATE TABLE shopping_cart (
+	id INT NOT NULL AUTO_INCREMENT,
+    customer_id INT NULL,
+    artwork_id INT NULL,
+    quantity INT NULL,
+    subtotal INT NULL,
+);
+
 INSERT INTO artists (firstname, lastname, username)
 VALUES ("Lakshdeep", "Bajwa", "bajwals");
 
