@@ -1,3 +1,59 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+label {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  display: block;
+  width: 250px;
+  height: 250px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.card{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: all 600ms;
+  z-index: 20;
+  top: 50%;
+  left: 75%;
+}
+
+  .card div{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: black;
+    color: white;
+    text-align: center;
+    line-height: 200px;
+    backface-visibility: hidden;
+    border-radius: 5px;
+  }
+
+  .card .back{
+    background: white;
+    color: black;
+    transform: rotateY(180deg);
+  }
+
+label:hover .card {
+  box-shadow: 0px 0px 5px 5px rgb(116, 99, 99);
+}
+
+input{
+  display: none;
+}
+
+:checked + .card {
+  transform: rotateY(180deg);
+}
+
+label:hover :checked + .card {
+  box-shadow: 0px 0px 5px 5px rgb(93, 92, 104);
+}
