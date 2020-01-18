@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-var ShoppingCart = sequelize.define("Artists", {
+var ShoppingCart = sequelize.define("ShoppingCart", {
     customerId: DataTypes.STRING,
     artworkId: DataTypes.STRING,
     quantity: DataTypes.STRING,

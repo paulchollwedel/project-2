@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-var Artwork = sequelize.define("Artists", {
+var Artwork = sequelize.define("Artwork", {
     artistId: DataTypes.STRING,
     title: DataTypes.STRING,
     imgUrl: DataTypes.STRING,
