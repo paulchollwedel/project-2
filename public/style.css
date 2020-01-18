@@ -1,0 +1,18 @@
+#login_form {
+    border: solid 1px;
+    border-radius: 5%;
+    width: 25%;
+    height: 20%;
+    margin-left: 35%;
+    margin-top: 15%;
+    padding: 2%;
+    background: #A9A9A9;
+};
+
+body { 
+    background: url("http://wilshirerefrigeration.com/wp-content/uploads/2018/08/silver-refrigerator.png") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+};
