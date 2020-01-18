@@ -38,6 +38,7 @@ CREATE TABLE shopping_cart (
     artwork_id INT NULL,
     quantity INT NULL,
     subtotal INT NULL,
+    PRIMARY KEY (id)
 );
 
 INSERT INTO artists (firstname, lastname, username)
