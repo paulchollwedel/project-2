@@ -6,12 +6,10 @@ var Artists = sequelize.define("Artists", {
 });
 
 Artists.associate = function(models) {
-    // Associating Author with Posts
-    // When an Author is deleted, also delete any associated Posts
     Artists.hasMany(models.Artwork, {
-      onDelete: "cascade"
-    });
-  };
+        onDelete: "cascade"
+        });
+};
 
 return Artists;
 };
