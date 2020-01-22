@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "cxzaq123",
+    "password": "root",
     "database": "instaArt",
     "host": "localhost",
     "dialect": "mysql"
