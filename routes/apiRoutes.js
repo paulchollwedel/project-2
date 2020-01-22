@@ -46,10 +46,10 @@ app.post("/api/post/customer", function(req, res) {
 // Posts a Shopping Cart object to the database.
 app.post("/api/post/shoppingcart", function(req, res) {
   let userShoppingCart ={
-    customerId: req.body.customerId,
-    artworkId: req.body.artworkId,
-    quantity: req.body.quantity,
-    subtotal: req.body.subtotal
+    customerId: 1,
+    artworkId: 1,
+    quantity: 1,
+    subtotal: "$100"
   }
   db.ShoppingCart.create(userShoppingCart).then(function(dbShoppingCart) {
     res.json(dbShoppingCart);
