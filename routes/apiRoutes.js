@@ -95,6 +95,27 @@ app.get("/api/get/artists/:id", function(req, res) {
   });
 })
 
+// Returns a specific artist based on their username.
+app.get("/api/get/artists/:username", function(req, res) {
+  db.Artists.findOne({ where: { username: req.params.username } }).then(function(dbArtist) {
+    res.json(dbArtist);
+  });
+})
+
+// Returns a specific artist based on their first name.
+app.get("/api/get/artists/:firstname", function(req, res) {
+  db.Artists.findOne({ where: { firstname: req.params.firstname } }).then(function(dbArtist) {
+    res.json(dbArtist);
+  });
+})
+
+// Returns a specific artist based on their last name.
+app.get("/api/get/artists/:lastname", function(req, res) {
+  db.Artists.findOne({ where: { lastname: req.params.lastname } }).then(function(dbArtist) {
+    res.json(dbArtist);
+  });
+})
+
 // Returns a specific artwork based on its unique id.
 app.get("/api/get/artwork/:id", function(req, res) {
   db.Artwork.findOne({ where: { id: req.params.id } }).then(function(dbArtwork) {
@@ -102,17 +123,31 @@ app.get("/api/get/artwork/:id", function(req, res) {
   });
 })
 
-// Returns a specific Customer based on its unique id.
-app.get("/api/get/customer/:id", function(req, res) {
-  db.Customers.findOne({ where: { id: req.params.id } }).then(function(dbArtwork) {
+// Returns a specific artwork based on its title.
+app.get("/api/get/artwork/:title", function(req, res) {
+  db.Artwork.findOne({ where: { title: req.params.title } }).then(function(dbArtwork) {
     res.json(dbArtwork);
+  });
+})
+
+// Returns a specific Customer based on their unique id.
+app.get("/api/get/customer/:id", function(req, res) {
+  db.Customers.findOne({ where: { id: req.params.id } }).then(function(dbCustomer) {
+    res.json(dbCustomer);
+  });
+})
+
+// Returns a specific Customer based on their username.
+app.get("/api/get/customer/:username", function(req, res) {
+  db.Customers.findOne({ where: { username: req.params.username } }).then(function(dbCustomer) {
+    res.json(dbCustomer);
   });
 })
 
 // Returns a specific Shopping Cart based on its unique id.
 app.get("/api/get/shoppingcart/:id", function(req, res) {
-  db.ShoppingCart.findOne({ where: { id: req.params.id } }).then(function(dbArtwork) {
-    res.json(dbArtwork);
+  db.ShoppingCart.findOne({ where: { id: req.params.id } }).then(function(dbShoppingCart) {
+    res.json(dbShoppingCart);
   });
 })
 
@@ -134,15 +169,15 @@ app.delete("/api/destroy/artwork/:id", function(req, res) {
 
 // Delete a Cusomter by id
 app.delete("/api/destroy/customer/:id", function(req, res) {
-  db.Customers.destroy({ where: { id: req.params.id } }).then(function(dbArtwork) {
-    res.json(dbArtwork);
+  db.Customers.destroy({ where: { id: req.params.id } }).then(function(dbCustomer) {
+    res.json(dbCustomer);
   });
 });
 
 // Delete a Shopping Cart by id
 app.delete("/api/destroy/shoppingcart/:id", function(req, res) {
-  db.ShoppingCart.destroy({ where: { id: req.params.id } }).then(function(dbArtwork) {
-    res.json(dbArtwork);
+  db.ShoppingCart.destroy({ where: { id: req.params.id } }).then(function(dbShoppingCart) {
+    res.json(dbShoppingCart);
   });
 });
 
