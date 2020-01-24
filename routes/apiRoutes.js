@@ -22,7 +22,8 @@ app.post("/api/post/artist", function(req, res) {
   let userArtist ={
     firstname: 'Justin',
     lastname: 'Singh',
-    username: 'jsingh'
+    username: 'jsingh',
+    email: 'jsingh@imsocool.com'
   }
   db.Artists.create(userArtist).then(function(dbArtist) {
     res.json(dbArtist);
@@ -35,6 +36,7 @@ app.post("/api/post/customer", function(req, res) {
     firstname: 'James',
     lastname: 'Silverthorn',
     username: 'jsilverthorn',
+    email: 'jsilverthorn@imsocool.com',
     creditCard: '0000-0000-0000-0000',
     mailingAddress: '1 Capitol Mall, Sacramento, California'
   }
