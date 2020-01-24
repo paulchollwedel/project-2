@@ -1,9 +1,10 @@
-import { sanitize } from 'dompurify';
+/** eslint-disable semi */
+const dompurify = require("dompurify")
 const input = document.querySelector('[name="input"]');
 const output = document.querysSlector('output');
 const buttons = document.querySelectorAll('nav button');
 input.addEventListener('input', () => {
-    const clean = sanitize(input.value, {
+    const clean = dompurify.sanitize(input.value, {
         FORBID_ATTR: ['width', 'height', 'style', ],
         FORBIS_TAGS: ['style'],
     })
