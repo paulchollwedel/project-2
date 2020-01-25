@@ -3,7 +3,8 @@ var Artists = sequelize.define("Artists", {
     firstname: DataTypes.STRING,
     lastname: DataTypes.STRING,
     username: DataTypes.STRING,
-    email: DataTypes.STRING
+    email: DataTypes.STRING,
+    password: DataTypes.STRING
 });
 
 Artists.associate = function(models) {

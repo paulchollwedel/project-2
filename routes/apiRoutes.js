@@ -13,7 +13,7 @@ app.post("/api/post/artwork", function(req, res) {
 
 // Posts an artist object to the database.
 app.post("/api/post/artist", function(req, res) {
-  db.Artists.create(req).then(function(dbArtist) {
+  db.Artists.create(req.body).then(function(dbArtist) {
     res.json(dbArtist);
   });
 });
