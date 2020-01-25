@@ -13,6 +13,11 @@ Artwork.associate = function(models) {
             allowNull: false
         }
     });
+    // Artwork.hasOne(models.Artists, {
+    //     foreignKey: {
+    //         allowNull: false
+    //     }
+    // })
 };
 
 return Artwork;

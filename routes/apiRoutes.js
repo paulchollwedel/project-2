@@ -5,55 +5,29 @@ const db = require("../models");
 
 // Posts an artwork object to the database.
 app.post("/api/post/artwork", function(req, res) {
-  let userArtwork = {
-    artistId: '1',
-    title: 'Breathtaking Landscape',
-    imgUrl: 'https://puu.sh/F0HaZ/f50c72dd54.jpeg',
-    price: '$100',
-    inStock: '5',
-  }
-  db.Artwork.create(userArtwork).then(function(dbArtwork) {
+  req.imgUrl = 'https://puu.sh/F0HaZ/f50c72dd54.jpeg',
+  db.Artwork.create(req).then(function(dbArtwork) {
     res.json(dbArtwork);
   });
 });
 
 // Posts an artist object to the database.
 app.post("/api/post/artist", function(req, res) {
-  let userArtist ={
-    firstname: 'Justin',
-    lastname: 'Singh',
-    username: 'jsingh',
-    email: 'jsingh@imsocool.com'
-  }
-  db.Artists.create(userArtist).then(function(dbArtist) {
+  db.Artists.create(req).then(function(dbArtist) {
     res.json(dbArtist);
   });
 });
 
 // Posts a Customer object to the database.
 app.post("/api/post/customer", function(req, res) {
-  let userCustomer ={
-    firstname: 'James',
-    lastname: 'Silverthorn',
-    username: 'jsilverthorn',
-    email: 'jsilverthorn@imsocool.com',
-    creditCard: '0000-0000-0000-0000',
-    mailingAddress: '1 Capitol Mall, Sacramento, California'
-  }
-  db.Customers.create(userCustomer).then(function(dbCustomer) {
+  db.Customers.create(req).then(function(dbCustomer) {
     res.json(dbCustomer);
   });
 });
 
 // Posts a Shopping Cart object to the database.
 app.post("/api/post/shoppingcart", function(req, res) {
-  let userShoppingCart ={
-    customerId: 1,
-    artworkId: 1,
-    quantity: 1,
-    subtotal: "$100"
-  }
-  db.ShoppingCart.create(userShoppingCart).then(function(dbShoppingCart) {
+  db.ShoppingCart.create(req).then(function(dbShoppingCart) {
     res.json(dbShoppingCart);
   });
 });
@@ -62,7 +36,13 @@ app.post("/api/post/shoppingcart", function(req, res) {
 
 // Gets all artwork from the database and returns an array.
 app.get("/api/get/artwork", function(req, res) {
-  db.Artwork.findAll({}).then(function(dbresponse) {
+  var query = {};
+    if (req.query.author_id) {
+      query.AuthorId = req.query.author_id;
+    }
+  db.Artwork.findAll({
+    where: query
+  }).then(function(dbresponse) {
     res.json(dbresponse)
   })
 })
@@ -85,6 +65,21 @@ app.get("/api/get/customers", function(req, res) {
 app.get("/api/get/shoppingcarts", function(req, res) {
   db.ShoppingCart.findAll({}).then(function(dbresponse) {
     res.json(dbresponse)
+  })
+})
+
+// Gets all artwork titles and artist names from the database and returns an array.
+app.get("/api/get/artworktitles", function(req, res) {
+  let artworkTitles = []
+  db.Artwork.findAll({}).then(function(dbresponse) {
+    dbresponse.forEach(function(item) {
+      var artworkObj = {
+        title: item.title
+      }
+      artworkTitles.push(artworkObj)
+      return artworkTitles
+    })
+    console.log(artworkTitles)
   })
 })
 
