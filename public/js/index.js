@@ -1,9 +1,51 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
 
+// Get references to page elements
+$(document).ready(function() {
+  
+  var submitBtn = $("#register-submit");
+  var artist = {
+    firstname: 'Sustin',
+    lastname: 'Jingh',
+    username: 'sjingh',
+    email: 'sjingh@imsocool.com'
+  }
+  var registerNow = function() {
+  var username = $("#username").val()
+  artist.firstname = username
+  submitBtn.on("click", function(event) {
+    event.preventDefault()
+    $.ajax({
+      type: "POST",
+      url: "/api/post/artist",
+      data: artist,
+      success: success,
+      dataType: dataType
+    });
+    // $.post("/api/post/artist")
+    // console.log("Testing submit button")
+  })
+  }
+  registerNow()
+})
+
+$(function() {
+
+  $('#login-form-link').click(function(e) {
+  $("#login-form").delay(100).fadeIn(100);
+   $("#register-form").fadeOut(100);
+  $('#register-form-link').removeClass('active');
+  $(this).addClass('active');
+  e.preventDefault();
+});
+$('#register-form-link').click(function(e) {
+  $("#register-form").delay(100).fadeIn(100);
+   $("#login-form").fadeOut(100);
+  $('#login-form-link').removeClass('active');
+  $(this).addClass('active');
+  e.preventDefault();
+});
+
+});
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function(example) {
