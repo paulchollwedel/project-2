@@ -6,7 +6,7 @@ const db = require("../models");
 // Posts an artwork object to the database.
 app.post("/api/post/artwork", function (req, res) {
   let userArtwork = {
-    artistId: '1',
+    ArtistId: '1',
     title: 'Breathtaking Landscape',
     imgUrl: 'https://puu.sh/F0HaZ/f50c72dd54.jpeg',
     price: '$100',

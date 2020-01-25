@@ -9,4 +9,115 @@
     background: #A9A9A9;
 };
 
+#photo1 {
+    padding:5%;
+    background: grey;
+    margin-left: 10%;
+    margin-right: 75%;
+    margin-top: 5%;
+    text-align: center;
+};
+
+#photo2 {
+    padding:5%;
+};
+
+label {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    display: inline;
+  }
+  
+  .card{
+    height: 250px;
+    transform-style: preserve-3d;
+    transition: all 600ms;
+    margin: 15px;
+    width: 250px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  
+    .card div{
+      height: 250px;
+      width: 250px;
+      text-align: center;
+      backface-visibility: hidden;
+      border-radius: 5px;
+      position: absolute;
+    }
+  
+    .card .back{
+        transform: rotateY(180deg);
+        background-color: rgb(190, 194, 197);
+    }
+  
+  label:hover .card {
+    box-shadow: 0px 0px 5px 5px black;
+  }
+  
+  input{
+    display: none;
+  }
+  
+  :checked + .card {
+    transform: rotateY(180deg);
+  }
+  
+  label:hover :checked + .card {
+    box-shadow: 0px 0px 5px 5px black;
+  }
+
+#outer_div{
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.fav_btn{
+  float: left;
+  background-color: lightgray;
+  margin-left: 15px;
+  color: gray;
+}
+
+.fav_btn:hover{
+  cursor: grab;
+  box-shadow: 0px 0px 1px 1px black;
+  color: yellow;
+}
+
+.cart_btn{
+    float: right;
+    margin-right: 10px;
+    background-color: lightgray;
+}
+
+.cart_btn:hover {
+    cursor: grab;
+    box-shadow: 0px 0px 1px 1px black;
+}
+
+img{
+    height: 250px;
+    width: 250px;
+    border-radius: 5px;
+}
+
+*, ::after, ::before {
+    box-sizing: unset;
+}
+
+#art_title{
+  font-size: 20px;
+}
+
+#art_artist, #art_price, #art_quantity{
+  font-size: 15px;
+}
 
