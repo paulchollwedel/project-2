@@ -1,12 +1,20 @@
 const app = require("express").Router();
 const db = require("../models");
+const bcrypt = require("bcryptjs")
+
+app.use("/api/post/artist", function(req, res) {
+  var a = "asdf"
+  bcrypt.hash(a, 10).then(function(data) {
+    console.log(data)
+  })
+})
 
 // POST ROUTES =================================================================================
 
 // Posts an artwork object to the database.
 app.post("/api/post/artwork", function(req, res) {
   req.imgUrl = 'https://puu.sh/F0HaZ/f50c72dd54.jpeg',
-  db.Artwork.create(req).then(function(dbArtwork) {
+  db.Artwork.create(req.body).then(function(dbArtwork) {
     res.json(dbArtwork);
   });
 });
