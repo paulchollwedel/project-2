@@ -1,8 +1,7 @@
 require("dotenv").config();
 var express = require("express");
 var exphbs = require("express-handlebars");
-
-const apiRoutes = require("./routes/apiRoutes");
+var apiRoutes = require("./routes/apiRoutes");
 
 var db = require("./models");
 

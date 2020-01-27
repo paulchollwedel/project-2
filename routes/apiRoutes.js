@@ -3,6 +3,8 @@ const db = require("../models");
 const bcrypt = require("bcryptjs");
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
+const emailer = require("")
+const config = require("config\recoverPassword"); 
 // POST ROUTES =================================================================================
 //
 app.use(cookieParser());
