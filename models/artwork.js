@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
     //         allowNull: false
     //     }
     // })
-};
+    // };
 
 
     Artwork.associate = function (models) {

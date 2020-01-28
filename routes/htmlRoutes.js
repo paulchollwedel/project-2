@@ -1,5 +1,12 @@
 var db = require("../models");
 var path = require("path")
+var scripts = [
+  { indexScript: '../public/js/index.js' },
+  { contactScript: '../public/js/contact.js' },
+  { artScript: '../public/js/art.js' },
+];
+
+module.exports = function(app) {
 
 function shuffle(a) {
   for (let i = a.length - 1; i > 0; i--) {
@@ -9,19 +16,15 @@ function shuffle(a) {
   return a;
 };
 
-<<<<<<< HEAD
   // app.get("/index", function(req, res) {
   //   res.sendFile(path.join(__dirname, "../public/styles/index.html"));
   // });
 
   app.get("/index", function(req, res) {
     res.render("index");
-=======
- app.get("/index", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/styles/index.html"));
-
->>>>>>> aaf85f8b13cf64726561b1b87dbc0ed567dd88d7
   });
+
+  
 
   app.get("/art", function (req, res) {
     db.Artwork.findAll({ include: db.Artists })
