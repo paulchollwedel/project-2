@@ -9,10 +9,9 @@ function shuffle(a) {
   return a;
 };
 
-module.exports = function (app) {
-  // Load index page
-  app.get("/", function (req, res) {
-    res.render("index");
+ app.get("/index", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/styles/index.html"));
+
   });
 
   app.get("/art", function (req, res) {

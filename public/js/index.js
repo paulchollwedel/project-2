@@ -1,9 +1,66 @@
-// Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
 
+// Get references to page elements
+$(document).ready(function() {
+  
+  var submitBtn = $("#register-submit");
+  
+  var artist = {
+    firstname: '',
+    lastname: '',
+    username: '',
+    email: '',
+    password: ''
+  }
+
+  submitBtn.on("click", function(event) {
+    event.preventDefault()
+
+    var username = $("#username-register").val()
+    var firstname = $("#firstname-register").val()
+    var lastname = $("#lastname-register").val()
+    var email = $("#email").val()
+    var password = $("#password-register").val()
+    var passwordConfirm = $("#confirm-password").val()
+
+    artist.username = username
+    artist.firstname = firstname
+    artist.lastname = lastname
+    artist.email = email
+    artist.password = password
+
+    console.log("username: " + username)
+    console.log("email: " + email)
+    JSON.stringify(artist)
+    console.log(artist)
+    $.ajax({
+      type: "POST",
+      url: "/api/post/artist",
+      data: artist
+    });
+    // $.post("/api/post/artist")
+    // console.log("Testing submit button")
+  })
+
+})
+
+$(function() {
+
+  $('#login-form-link').click(function(e) {
+  $("#login-form").delay(100).fadeIn(100);
+   $("#register-form").fadeOut(100);
+  $('#register-form-link').removeClass('active');
+  $(this).addClass('active');
+  e.preventDefault();
+});
+$('#register-form-link').click(function(e) {
+  $("#register-form").delay(100).fadeIn(100);
+   $("#login-form").fadeOut(100);
+  $('#login-form-link').removeClass('active');
+  $(this).addClass('active');
+  e.preventDefault();
+});
+
+});
 // The API object contains methods for each kind of request we'll make
 var API = {
   saveExample: function (example) {
@@ -95,5 +152,5 @@ var handleDeleteBtnClick = function () {
 };
 
 // Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+// $submitBtn.on("click", handleFormSubmit);
+// $exampleList.on("click", ".delete", handleDeleteBtnClick);
