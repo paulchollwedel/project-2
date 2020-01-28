@@ -1,7 +1,7 @@
 
 // Get references to page elements
 $(document).ready(function() {
-  
+  console.log("handlebars sends the js file")
   var submitBtn = $("#register-submit");
   
   var artist = {

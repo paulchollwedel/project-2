@@ -1,5 +1,12 @@
 var db = require("../models");
 var path = require("path")
+var scripts = [
+  { indexScript: '../public/js/index.js' },
+  { contactScript: '../public/js/contact.js' },
+  { artScript: '../public/js/art.js' },
+];
+
+module.exports = function(app) {
 
 function shuffle(a) {
   for (let i = a.length - 1; i > 0; i--) {
@@ -9,10 +16,15 @@ function shuffle(a) {
   return a;
 };
 
- app.get("/index", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/styles/index.html"));
+  // app.get("/index", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/styles/index.html"));
+  // });
 
+  app.get("/index", function(req, res) {
+    res.render("index");
   });
+
+  
 
   app.get("/art", function (req, res) {
     db.Artwork.findAll({ include: db.Artists })
@@ -33,6 +45,10 @@ function shuffle(a) {
 
   app.get("/contact", function (req, res) {
     res.render("contact");
+  });
+
+  app.get("/upload", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/styles/upload.html"));
   });
 
   // Render 404 page for any unmatched routes
