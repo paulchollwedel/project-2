@@ -39,7 +39,7 @@ if (process.env.NODE_ENV === "development") {
 db.sequelize.sync(syncOptions).then(function () {
   app.listen(PORT, function () {
     console.log(
-      "==> 🌎  Listening on port %s. Visit http://localhost:%s/home in your browser.",
+      "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
       PORT,
       PORT
     );
