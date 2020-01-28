@@ -1,5 +1,6 @@
 var db = require("../models");
-var path = require("path")
+var path = require("path");
+var app = require("express").Router();
 
 function shuffle(a) {
   for (let i = a.length - 1; i > 0; i--) {
@@ -9,34 +10,34 @@ function shuffle(a) {
   return a;
 };
 
- app.get("/index", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/styles/index.html"));
+app.get("/index", function (req, res) {
+  res.sendFile(path.join(__dirname, "../public/styles/index.html"));
+});
 
-  });
+app.get("/art", function (req, res) {
+  db.Artwork.findAll({ include: db.Artists })
+    .then((data) => {
+      var x = data.map(a => {
+        return {
+          artwork: a.toJSON(),
+          artist: a.Artist.toJSON()
+        }
+      })
+      var obj = {
+        art: shuffle(x)
+      };
+      console.log(obj);
+      res.render("art", obj);
+    });
+});
 
-  app.get("/art", function (req, res) {
-    db.Artwork.findAll({ include: db.Artists })
-      .then((data) => {
-        var x = data.map(a => {
-          return {
-            artwork: a.toJSON(),
-            artist: a.Artist.toJSON()
-          }
-        })
-        var obj = {
-          art: shuffle(x)
-        };
-        console.log(obj);
-        res.render("art", obj);
-      });
-  });
+app.get("/contact", function (req, res) {
+  res.render("contact");
+});
 
-  app.get("/contact", function (req, res) {
-    res.render("contact");
-  });
+// Render 404 page for any unmatched routes
+app.get("*", function (req, res) {
+  res.render("404");
+});
 
-  // Render 404 page for any unmatched routes
-  app.get("*", function (req, res) {
-    res.render("404");
-  });
-};
+module.exports = app;

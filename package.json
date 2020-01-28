@@ -29,5 +29,18 @@
     "handlebars": "^4.7.2",
     "mocha": "^6.1.4",
     "prettier": "^1.17.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paulchollwedel/project-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/paulchollwedel/project-2/issues"
+  },
+  "homepage": "https://github.com/paulchollwedel/project-2#readme"
 }
