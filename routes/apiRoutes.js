@@ -2,12 +2,12 @@ const app = require("express").Router();
 const db = require("../models");
 const bcrypt = require("bcryptjs")
 
-app.use("/api/post/artist", function(req, res) {
-  var a = "asdf"
-  bcrypt.hash(a, 10).then(function(data) {
-    console.log(data)
-  })
-})
+// app.use("/api/post/artist", function(req, res) {
+//   var a = "asdf"
+//   bcrypt.hash(a, 10).then(function(data) {
+//     console.log(data)
+//   })
+// })
 
 // POST ROUTES =================================================================================
 
