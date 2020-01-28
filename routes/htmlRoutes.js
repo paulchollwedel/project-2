@@ -6,25 +6,25 @@ var scripts = [
   { artScript: '../public/js/art.js' },
 ];
 
-module.exports = function(app) {
+module.exports = function (app) {
 
-function shuffle(a) {
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-};
+  function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
 
   // app.get("/index", function(req, res) {
   //   res.sendFile(path.join(__dirname, "../public/styles/index.html"));
   // });
 
-  app.get("/index", function(req, res) {
+  app.get("/", function (req, res) {
     res.render("index");
   });
 
-  
+
 
   app.get("/art", function (req, res) {
     db.Artwork.findAll({ include: db.Artists })
@@ -47,9 +47,13 @@ function shuffle(a) {
     res.render("contact");
   });
 
-  app.get("/upload", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/styles/upload.html"));
-  });
+  // app.get("/upload", function (req, res) {
+  //   res.render("upload");
+  // });
+
+  // app.get("/favorites", function (req, res) {
+  //   res.render("favorites");
+  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {
