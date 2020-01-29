@@ -247,3 +247,9 @@ font-weight: bold;
 .contacts{
   text-align: center;
 }
+
+.panel{
+  border: 6px solid black;
+  border-radius: 5px;
+  background: linear-gradient(to bottom, #808080 0%, #FFFFFF 100%);
+} 
