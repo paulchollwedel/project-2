@@ -57,6 +57,7 @@ label {
 
 #outer_div, .upload_form{  
   width: 76%;
+  min-width: fit-content;
     margin: 0 auto;
     margin-top: 10px;
     text-align: center;
@@ -97,10 +98,12 @@ img{
 
 #art_title{
   font-size: 20px;
+  font-weight: bold;
 }
 
 #art_artist, #art_price, #art_quantity{
   font-size: 15px;
+  font-weight: bold;
 }
 
 .panel-login {
