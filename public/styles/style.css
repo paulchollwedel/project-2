@@ -123,14 +123,14 @@ img{
 	text-decoration: none;
 	color: #666;
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 18px;
 	-webkit-transition: all 0.1s linear;
 	-moz-transition: all 0.1s linear;
 	transition: all 0.1s linear;
 }
 .panel-login>.panel-heading a.active{
-	color: #029f5b;
-	font-size: 18px;
+  font-size: 18px;
+  color: #666;
 }
 .panel-login>.panel-heading hr{
 	margin-top: 10px;
