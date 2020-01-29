@@ -7,14 +7,6 @@ module.exports = function (sequelize, DataTypes) {
         buyerId: DataTypes.STRING
     });
 
-    // Artwork.hasOne(models.Artists, {
-    //     foreignKey: {
-    //         allowNull: false
-    //     }
-    // })
-    // };
-
-
     Artwork.associate = function (models) {
         Artwork.belongsTo(models.Artists, {
             foreignKey: {

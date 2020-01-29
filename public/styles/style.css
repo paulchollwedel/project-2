@@ -23,6 +23,7 @@ label {
     width: 250px;
     border-radius: 5px;
     display: inline-block;
+    cursor: pointer;
   }
   
     .card div{
@@ -55,8 +56,9 @@ label {
     box-shadow: 0px 0px 5px 5px black;
   }
 
-#outer_div{  
+#outer_div, .upload_form{  
   width: 76%;
+  min-width: fit-content;
     margin: 0 auto;
     margin-top: 10px;
     text-align: center;
@@ -97,10 +99,12 @@ img{
 
 #art_title{
   font-size: 20px;
+  font-weight: bold;
 }
 
 #art_artist, #art_price, #art_quantity{
   font-size: 15px;
+  font-weight: bold;
 }
 
 .panel-login {
@@ -210,3 +214,42 @@ img{
   background-color: gray;
 }
 
+.upload_form{
+  padding: 10px;
+}
+
+.upload_title{
+  text-align: center;
+  font-weight: bold;
+}
+
+.shoppingCart_link{
+  background: lightgray;
+  border-radius: 8px;
+}
+
+.home_btn{
+color: black;
+font-weight: bold;
+}
+
+.column{
+  display: inline-block;
+  font-size: 30px;
+  background: linear-gradient(to bottom, #808080 0%, #FFFFFF 100%);
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 15px;
+}
+
+.contacts{
+  text-align: center;
+}
+
+.panel{
+  border: 6px solid black;
+  border-radius: 5px;
+  background: linear-gradient(to bottom, #808080 0%, #FFFFFF 100%);
+}
