@@ -58,7 +58,7 @@ label {
 
 #outer_div, .upload_form{  
   width: 76%;
-  min-width: fit-content;
+  min-width: 35%;
     margin: 0 auto;
     margin-top: 10px;
     text-align: center;
