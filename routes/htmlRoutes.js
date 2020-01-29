@@ -47,13 +47,17 @@ module.exports = function (app) {
     res.render("contact");
   });
 
-  // app.get("/upload", function (req, res) {
-  //   res.render("upload");
-  // });
+  app.get("/upload", function (req, res) {
+    res.render("upload");
+  });
 
-  // app.get("/favorites", function (req, res) {
-  //   res.render("favorites");
-  // });
+  app.get("/favorites", function (req, res) {
+    res.render("favorites");
+  });
+
+  app.get("/shoppingcart", function (req, res) {
+    res.render("shoppingcart");
+  });
 
   // Render 404 page for any unmatched routes
   app.get("*", function (req, res) {

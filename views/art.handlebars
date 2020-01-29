@@ -1,5 +1,18 @@
 <div class="search_bar">
     <nav class="navbar navbar-dark bg-dark">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Search By
+            </button>
+
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Title</a>
+                <a class="dropdown-item" href="#">Artist</a>
+                <a class="dropdown-item" href="#">Price</a>
+            </div>
+        </div>
+
         <form class="form-inline">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>

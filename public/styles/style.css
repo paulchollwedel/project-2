@@ -55,7 +55,7 @@ label {
     box-shadow: 0px 0px 5px 5px black;
   }
 
-#outer_div{  
+#outer_div, .upload_form{  
   width: 76%;
     margin: 0 auto;
     margin-top: 10px;
@@ -210,3 +210,36 @@ img{
   background-color: gray;
 }
 
+.upload_form{
+  padding: 10px;
+}
+
+.upload_title{
+  text-align: center;
+  font-weight: bold;
+}
+
+.shoppingCart_link{
+  background: lightgray;
+  border-radius: 8px;
+}
+
+.home_btn{
+color: black;
+font-weight: bold;
+}
+
+.column{
+  display: inline-block;
+  font-size: 30px;
+  background: linear-gradient(to bottom, #808080 0%, #FFFFFF 100%);
+  color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 15px;
+}
+
+.contacts{
+  text-align: center;
+}
